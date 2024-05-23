@@ -1,0 +1,5 @@
+Set config in config file
+error handling
+async
+logging
+code comments
