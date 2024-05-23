@@ -32,8 +32,7 @@ public class AvatarData : IAvatarData
         try
         {
             // If the identifier is null or empty return default URL
-            if ((identifier != null)
-                    && !string.IsNullOrWhiteSpace(identifier))
+            if (!string.IsNullOrWhiteSpace(identifier))
             {
                 identifier = identifier.Trim();
 
@@ -49,8 +48,7 @@ public class AvatarData : IAvatarData
                         return _restClient.GetImageURL(imageURL);
                     }
                     // Condition 2: If the last character is 1, 2, 3, 4 or 5
-                    else if ((lastNum > 0)
-                        && (lastNum < 6))
+                    else if (lastNum > 0)
                     {
                         // Get from DB
                         return _avatarImageRepository.GetById(lastNum).ImageURL;
@@ -62,7 +60,7 @@ public class AvatarData : IAvatarData
                 {
                     return "https://api.dicebear.com/8.x/pixel-art/png?seed=vowel&size=150";
                 }
-                // Condition 4: If identifier contais at least one non-alphanmumeric character
+                // Condition 4: If identifier contains at least one non-alphanumeric character
                 else if (HasNonAlphaNumChar(identifier))
                 {
                     Random rnd = new Random();
