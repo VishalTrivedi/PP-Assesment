@@ -78,7 +78,7 @@ public class AvatarData : IAvatarData
         return defaultURL;
     }
 
-    private bool HasOneVowel(string identifier)
+    private static bool HasOneVowel(string identifier)
     {
         char[] letters = identifier.ToCharArray();
         string vowels = "aeiouAEIOU";
@@ -94,7 +94,7 @@ public class AvatarData : IAvatarData
         return false;        
     }
 
-    private bool HasNonAlphaNumChar(string identifier)
+    private static bool HasNonAlphaNumChar(string identifier)
     {
         return identifier.Any(ch => !char.IsLetterOrDigit(ch));
     }

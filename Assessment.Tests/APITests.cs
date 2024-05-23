@@ -249,7 +249,7 @@ namespace Assessment.Tests
             // Assert
             Assert.Equal(actualURLPrefix, resultURLPrefix);
             Assert.InRange(seedNumber, 1, 5);
-            Assert.Equal(resultURLSuffix, resultURLSuffix);
+            Assert.Equal(resultURLSuffix, actualURLSuffix);
         }
 
         [Theory]
